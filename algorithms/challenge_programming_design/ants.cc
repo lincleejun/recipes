@@ -3,6 +3,8 @@
 #include <algorithm>
 #include <iostream>
 
+#include "gtest/gtest.h"
+
 namespace alg {
 
 std::pair<int, int> Ants(int stick_length, const std::vector<int>& ants) {
@@ -21,13 +23,10 @@ std::pair<int, int> Ants(int stick_length, const std::vector<int>& ants) {
 
 }  // namespace alg
 
-
-int main() {
+TEST(Ants, ants) {
   int l = 10;
-  std::vector<int> v = {2, 6, 7};
+  std::vector<int> v = { 2, 6, 7 };
   auto result = alg::Ants(l, v);
-  std::cout << "min = " << result.first << std::endl;
-  std::cout << "max = " << result.second << std::endl;
-
-  return 0;
+  EXPECT_EQ(result.first, 4);
+  EXPECT_EQ(result.second, 8);
 }
