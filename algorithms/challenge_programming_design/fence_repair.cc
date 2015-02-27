@@ -1,6 +1,9 @@
 // poj 3253
 
 #include <vector>
+#include <queue>
+#include <xfunctional>
+
 #include "gtest/gtest.h"
 
 namespace alg {
@@ -35,6 +38,24 @@ int FenceRepair(std::vector<int> data) {
   return answer;
 }
 
+int FenceRepairUseQueue(std::vector<int> data) {
+  std::priority_queue<int, std::vector<int>, std::greater<int> > datas;
+  for (auto& item : data) {
+    datas.push(item);
+  }
+
+  int answer = 0;
+  while (datas.size() > 1) {
+    int l1 = datas.top();
+    datas.pop();
+    int l2 = datas.top();
+    datas.pop();
+    answer += l1 + l2;
+    datas.push(l1 + l2);
+  }
+  return answer;
+}
+
 }  // namespace alg
 
 TEST(FenceRepair, FenceRepair) {
@@ -49,4 +70,19 @@ TEST(FenceRepair, FenceRepair) {
 
   std::vector<int> v3 = {8, 5, 8};
   EXPECT_EQ(34, alg::FenceRepair(v3));
+}
+
+
+TEST(FenceRepair, FenceRepairUseQueue) {
+  std::vector<int> v = {1, 2, 3, 4, 5};
+  EXPECT_EQ(33, alg::FenceRepairUseQueue(v));
+
+  std::vector<int> v1 = {5, 3, 4, 2, 1};
+  EXPECT_EQ(33, alg::FenceRepairUseQueue(v1));
+
+  std::vector<int> v2 = {5, 4, 3, 2, 1};
+  EXPECT_EQ(33, alg::FenceRepairUseQueue(v2));
+
+  std::vector<int> v3 = {8, 5, 8};
+  EXPECT_EQ(34, alg::FenceRepairUseQueue(v3));
 }
