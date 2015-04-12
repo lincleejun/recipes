@@ -83,7 +83,14 @@
     <ClCompile Include="algorithms\challenge_programming_design\best_cow_line.cc" />
     <ClCompile Include="algorithms\challenge_programming_design\expedition.cc" />
     <ClCompile Include="algorithms\challenge_programming_design\fence_repair.cc" />
+    <ClCompile Include="algorithms\challenge_programming_design\millionaire.cpp" />
     <ClCompile Include="algorithms\challenge_programming_design\multipart_sum.cc" />
+    <ClCompile Include="algorithms\challenge_programming_design\trie.cc" />
+    <ClCompile Include="algorithms\leetcode\longest_palindromic_substring.cc" />
+    <ClCompile Include="algorithms\poj\1979_black_and_red.cc" />
+    <ClCompile Include="algorithms\poj\AggressiveCows.cpp" />
+    <ClCompile Include="algorithms\poj\CableMaster.cc" />
+    <ClCompile Include="algorithms\poj\subsequence_3061.cpp" />
     <ClCompile Include="testing\googletest\src\gtest-all.cc" />
     <ClCompile Include="testing\googletest\src\gtest_main.cc" />
   </ItemGroup>
